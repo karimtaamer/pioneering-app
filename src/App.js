@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Sidebar from "./nav/Sidebar";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
+import Page1 from "./page-1/Page1";
+import Page2 from "./page-2/Page2";
+
+const router = createBrowserRouter([
+  {
+    path: "/page1",
+    element: <Page1 />,
+  },
+  {
+    path: "/page2",
+    element: <Page2 />,
+  },
+  {
+    path: "*",
+    element: <Navigate to="/page1" replace />,
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" id="outer-container">
+      <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
+      <div id="page-wrap">
+        <RouterProvider router={router} />
+      </div>
     </div>
   );
 }
