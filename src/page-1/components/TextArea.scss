@@ -1,0 +1,14 @@
+.page1TextAreaContainer {
+    min-height: 25%;
+    width: 400px;
+    padding: $large-space;
+    &.light {
+        background-color: $rightArea-light-background-color;
+        color: $rightArea-light-text-color;
+    }
+
+    &.dark {
+        background-color: $rightArea-dark-background-color;
+        color: $rightArea-dark-text-color;
+    }
+}

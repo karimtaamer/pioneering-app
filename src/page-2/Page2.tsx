@@ -1,9 +1,14 @@
 import React from "react";
+import Button1 from "./components/Button1";
+import Button2 from "./components/Button2";
+import Button3 from "./components/Button3";
 
 const Page2 = () => {
   return (
-    <div>
-      <h1>Welcome to my 22222</h1>
+    <div className="page2Container">
+      <Button1 />
+      <Button2 />
+      <Button3/>
     </div>
   );
 };

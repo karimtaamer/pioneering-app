@@ -1,11 +1,20 @@
+
+
 .topBarContainer {
   display: flex;
-  padding: 0 20px;
-  color: white;
-  height: 60px;
+  padding: 0 $large-space;
+  height: 10vh;
   align-items: center;
   justify-content: space-between;
-  background-color: #333;
+  &.light {
+    background-color: $topBar-light-background-color;
+    color: $topBar-light-text-color;
+  }
+  
+  &.dark {
+    background-color: $topBar-dark-background-color;
+    color: $topBar-dark-text-color;
+  }
 }
 
 .topBarHeading {

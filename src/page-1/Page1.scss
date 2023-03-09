@@ -1,0 +1,30 @@
+
+.page1Container{
+    padding-top: $large-space;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+}
+
+.page1LeftAreaContainer{
+    display: flex;
+    flex-direction: column; 
+    margin-right: $large-space;
+    align-items: center;
+    min-height: 25%;
+    width:300px;
+    padding:  $large-space;
+    &.light {
+        background-color: $leftArea-light-background-color;
+        color: $leftArea-light-text-color;
+      }
+      
+      &.dark {
+        background-color: $leftArea-dark-background-color;
+        color: $leftArea-dark-text-color;
+      }
+}
+

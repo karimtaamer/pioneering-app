@@ -1,0 +1,14 @@
+.page1ThemeButton{
+    width: 90%;
+    margin-bottom: $large-space !important;
+    margin-top: $small-space !important;
+    &.light {
+        background-color: $button-light-background-color;
+        color: $button-light-text-color;
+      }
+      
+      &.dark {
+        background-color: $button-dark-background-color;
+        color: $button-dark-text-color;
+      }
+}

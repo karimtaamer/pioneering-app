@@ -8,7 +8,7 @@ import {
 import Page1 from "./page-1/Page1";
 import Page2 from './page-2/Page2';
 import TopBar from './nav/top-bar/Topbar';
-import './styles/root.scss'
+import './root.scss'
 
 const router = createBrowserRouter([
   {
