@@ -4,8 +4,13 @@ import { ThemeContext } from "../../context/ThemeContext";
 import AlertDialog from "./AlertDialog";
 import { useButtonCount } from "../hooks/ButtonCountHook";
 
+/**The button labeled "Delete". Opens up a dialog that if the option
+ * "Delete" was picked, increments it's counter, and switches \
+ * between the word "Delete" & "Disabled"
+ */
 const Button3 = () => {
   const { theme } = React.useContext(ThemeContext);
+  //Custom Hook to increase button count and open/close the dialog
   const {
     isAlertOpen,
     handleAlertOpen,
@@ -14,6 +19,7 @@ const Button3 = () => {
     onClickHandler,
   } = useButtonCount();
 
+  //A boolean state to decide what to show: "Delete"/"Disabled"
   const [buttonToggle, setButtonToggle] = React.useState<boolean>(true);
   const buttonName = `${buttonToggle ? "Delete" : "Disabled"} ${buttonCount} `;
 

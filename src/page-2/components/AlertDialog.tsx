@@ -13,10 +13,13 @@ interface IAlertDialogProps {
   handleClose: () => void;
   title: string;
   bodyText: string;
+  //Pass Element to be displayed on the right
   rightOptionButton: JSX.Element;
+  //Pass true to ignore the "Cancel" action
   disableNegativeAction?: boolean;
 }
 
+/**A reusable Alert Dialog component */
 const AlertDialog: React.FunctionComponent<IAlertDialogProps> = ({
   isOpen,
   handleClose,

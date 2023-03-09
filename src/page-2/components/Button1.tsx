@@ -3,11 +3,10 @@ import * as React from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import AlertDialog from "./AlertDialog";
 
-
-const Button1=() => {
+/**The button labeled "Single CTA". Only opens up a dialog*/
+const Button1 = () => {
   const { theme } = React.useContext(ThemeContext);
   const [isAlertOpen, setIsAlertOpen] = React.useState<boolean>(false);
-  
 
   return (
     <>

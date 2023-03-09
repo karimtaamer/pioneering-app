@@ -4,8 +4,12 @@ import { ThemeContext } from "../../context/ThemeContext";
 import AlertDialog from "./AlertDialog";
 import { useButtonCount } from "../hooks/ButtonCountHook";
 
+/**The button labeled "Remove". Opens up a dialog that if the option
+ * "remove" was picked, increments it's counter
+ */
 const Button2 = () => {
   const { theme } = React.useContext(ThemeContext);
+  //Custom Hook to increase button count and open/close the dialog
   const {
     isAlertOpen,
     handleAlertOpen,

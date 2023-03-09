@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+/**A custom hook that is responsible for incrementing the count
+ * in a button, and to open or close the Dialog.
+ */
 export const useButtonCount = () => {
   const [isAlertOpen, setIsAlertOpen] = useState<boolean>(false);
   const [buttonCount, setButtonCount] = useState<number>(0);

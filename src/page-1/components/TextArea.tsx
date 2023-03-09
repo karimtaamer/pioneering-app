@@ -1,6 +1,5 @@
 import * as React from "react";
 import { ThemeContext } from "../../context/ThemeContext";
-import { useSendText } from "../hooks/SendTextHook";
 
 interface ITextAreaProps {
   //This will be the accumulation of text sent by different components
@@ -8,9 +7,8 @@ interface ITextAreaProps {
 }
 
 /**The text area on the right part of Page 1 */
-const TextArea: React.FunctionComponent<ITextAreaProps> = () => {
+const TextArea: React.FunctionComponent<ITextAreaProps> = ({ printedText }) => {
   const { theme } = React.useContext(ThemeContext);
-  const {printedText} =useSendText()
 
   return (
     <div className={`page1TextAreaContainer ${theme}`}>
