@@ -1,69 +1,69 @@
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  transition: all 0.3s ease;
+  &.open {
+    width: 200px;
+  }
+  .toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 60px;
-    height: 100%;
-    background-color: #333;
-    color: #fff;
-    transition: all 0.3s ease;
-    &.open {
-      width: 200px;
-    }
-    .toggle {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 60px;
-      height: 60px;
-      cursor: pointer;
-      svg {
-        font-size: 24px;
-      }
-      &.light {
-        color: $topBar-light-text-color;
-      }
-      
-      &.dark {
-        color: $topBar-dark-text-color;
-      }
-    }
-  
-    .links {
-      display: block;
-      padding: 20px;
-  
-      a {
-        display: block;
-        color: #fff;
-        margin-bottom: 10px;
-        font-size: 16px;
-        text-decoration: none;
-  
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  
-    &.open .links {
-      display: block;
+    height: 60px;
+    cursor: pointer;
+    svg {
+      font-size: 24px;
     }
     &.light {
-        background-color: $topBar-light-background-color;
-      }
-      
-      &.dark {
-        background-color: $topBar-dark-background-color;
-      }
+      color: $topBar-light-text-color;
+    }
+
+    &.dark {
+      color: $topBar-dark-text-color;
+    }
   }
-  
-  .chosenItem{
-    &.light {
-        color: $topBar-light-text-color;
+
+  .links {
+    display: block;
+    padding: 20px;
+
+    a {
+      display: block;
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 16px;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
       }
-      
-      &.dark {
-        color: $topBar-dark-text-color;
-      }
+    }
   }
+
+  &.open .links {
+    display: block;
+  }
+  &.light {
+    background-color: $topBar-light-background-color;
+  }
+
+  &.dark {
+    background-color: $topBar-dark-background-color;
+  }
+}
+
+.chosenItem {
+  &.light {
+    color: $topBar-light-text-color;
+  }
+
+  &.dark {
+    color: $topBar-dark-text-color;
+  }
+}

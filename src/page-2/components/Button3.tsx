@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import * as React from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import AlertDialog from "./AlertDialog";
-import { useButtonCount } from "./ButtonCountHook";
+import { useButtonCount } from "../hooks/ButtonCountHook";
 
 const Button3 = () => {
   const { theme } = React.useContext(ThemeContext);

@@ -1,5 +1,9 @@
 import React, { createContext, useState } from "react";
 
+/**The global Theme provider that will handle the changing of the theme from light 
+ * to dark and vice-versa
+ */
+
 export const ThemeContext = createContext<any>({ theme: "light", undefined });
 
 

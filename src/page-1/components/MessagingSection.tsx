@@ -6,20 +6,25 @@ interface IMessagingSectionProps {
   setPrintedText: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
+/**The container for the area that has a TextField and a button to send what
+ * is inside the Textfield to teh Text Area
+ */
 const MessagingSection: React.FunctionComponent<IMessagingSectionProps> = ({
   setPrintedText,
 }) => {
   const { theme } = React.useContext(ThemeContext);
   const [message, setMessage] = React.useState<string>("");
 
+  /**Sends a message to the text area */
   const onClickHandler = () => {
     const currentDate = new Date().toLocaleString();
     setPrintedText((prevArray) => [
       ...prevArray,
       `${currentDate} Message Sent: ${message}`,
     ]);
-    setMessage('')
+    setMessage("");
   };
+
   return (
     <div>
       <TextField
@@ -31,7 +36,7 @@ const MessagingSection: React.FunctionComponent<IMessagingSectionProps> = ({
         fullWidth
       />
       <Button
-      disabled={!message}
+        disabled={!message}
         className={`page1ThemeButton ${theme}`}
         variant="contained"
         onClick={() => onClickHandler()}

@@ -5,6 +5,7 @@ import MessagingSection from "./components/MessagingSection";
 import TextArea from "./components/TextArea";
 import ThemeButton from "./components/ThemeButton";
 
+/**The container for all items visible on Page 1 */
 const Page1 = () => {
   const [printedText, setPrintedText] = useState<string[]>([]);
   const { theme } = useContext(ThemeContext);
