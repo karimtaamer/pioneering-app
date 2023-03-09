@@ -1,39 +1,27 @@
-import React from 'react'
-import Sidebar from "./nav/side-bar/Sidebar";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Navigate,
-} from "react-router-dom";
+import React from "react";
+import { Navigate, Routes, Route } from "react-router-dom";
 import Page1 from "./page-1/Page1";
-import Page2 from './page-2/Page2';
-import TopBar from './nav/top-bar/Topbar';
-import './root.scss'
-
-const router = createBrowserRouter([
-  {
-    path: "/page1",
-    element: <Page1 />,
-  },
-  {
-    path: "/page2",
-    element: <Page2 />,
-  },
-  {
-    path: "*",
-    element: <Navigate to="/page1" replace />,
-  },
-]);
+import Page2 from "./page-2/Page2";
+import TopBar from "./nav/top-bar/Topbar";
+import "./styles/root.scss";
+import { ThemeProvider } from "./context/ThemeContext";
+import SideBar from "./nav/side-bar/SideBar";
 
 function App() {
   return (
-    <div className="App" id="outer-container">
-      <TopBar/>
-      <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
-      <div id="page-wrap">
-        <RouterProvider router={router} />
+    <ThemeProvider>
+      <div className="App" id="outer-container">
+        <TopBar />
+        <SideBar />
+        <div id="page-wrap">
+          <Routes>
+            <Route path="/page1" element={<Page1 />} />
+            <Route path="/page2" element={<Page2 />} />
+            <Route path="*" element={<Navigate to="/page1" replace />} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 }
 

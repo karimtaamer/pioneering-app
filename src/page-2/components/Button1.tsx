@@ -3,11 +3,11 @@ import * as React from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import AlertDialog from "./AlertDialog";
 
-interface IButton1Props {}
 
 const Button1=() => {
   const { theme } = React.useContext(ThemeContext);
   const [isAlertOpen, setIsAlertOpen] = React.useState<boolean>(false);
+  
 
   return (
     <>

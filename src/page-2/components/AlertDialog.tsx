@@ -13,8 +13,8 @@ interface IAlertDialogProps {
   handleClose: () => void;
   title: string;
   bodyText: string;
-  rightOptionButton: JSX.Element
-  disableNegativeAction?:boolean
+  rightOptionButton: JSX.Element;
+  disableNegativeAction?: boolean;
 }
 
 const AlertDialog: React.FunctionComponent<IAlertDialogProps> = ({
@@ -23,8 +23,7 @@ const AlertDialog: React.FunctionComponent<IAlertDialogProps> = ({
   title,
   bodyText,
   rightOptionButton,
-
-  disableNegativeAction
+  disableNegativeAction,
 }) => {
   return (
     <Dialog
@@ -40,7 +39,15 @@ const AlertDialog: React.FunctionComponent<IAlertDialogProps> = ({
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        {!disableNegativeAction && <Button variant="text" style={{color:'black'}} onClick={handleClose}>Cancel</Button>}
+        {!disableNegativeAction && (
+          <Button
+            variant="text"
+            style={{ color: "black" }}
+            onClick={handleClose}
+          >
+            Cancel
+          </Button>
+        )}
         {rightOptionButton}
       </DialogActions>
     </Dialog>

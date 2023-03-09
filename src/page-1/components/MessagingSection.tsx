@@ -28,6 +28,7 @@ const MessagingSection: React.FunctionComponent<IMessagingSectionProps> = ({
         id="outlined-basic"
         label="Message"
         variant="outlined"
+        fullWidth
       />
       <Button
       disabled={!message}
