@@ -1,12 +1,14 @@
-import "./App.css";
-import Sidebar from "./nav/Sidebar";
+import React from 'react'
+import Sidebar from "./nav/side-bar/Sidebar";
 import {
   createBrowserRouter,
   RouterProvider,
   Navigate,
 } from "react-router-dom";
 import Page1 from "./page-1/Page1";
-import Page2 from "./page-2/Page2";
+import Page2 from './page-2/Page2';
+import TopBar from './nav/top-bar/Topbar';
+import './styles/root.scss'
 
 const router = createBrowserRouter([
   {
@@ -26,6 +28,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className="App" id="outer-container">
+      <TopBar/>
       <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
       <div id="page-wrap">
         <RouterProvider router={router} />

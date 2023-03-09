@@ -1,20 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+//@ts-ignore
 import { slide as Menu } from "react-burger-menu";
-import "./Sidebar.css";
 
-const SideBar = ({ pageWrapId, outerContainerId }) => {
+
+interface ISideBarProps {
+  pageWrapId:string
+  outerContainerId:string
+}
+
+const SideBar: React.FunctionComponent<ISideBarProps> = ({pageWrapId, outerContainerId}) => {
   const page1URL = "/page1";
   const page2URL = "/page2";
   const sessionUrlKey = "savedOption";
 
-  const [option, setOption] = useState(page1URL);
+  const [option, setOption] = React.useState<string | null >(page1URL);
 
-  const onLinkClickedHandler = (source) => {
+  const onLinkClickedHandler = (source:string) => {
     sessionStorage.setItem(sessionUrlKey, source);
     setOption(source);
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     setOption(sessionStorage.getItem(sessionUrlKey));
   }, []);
 
@@ -43,3 +49,4 @@ const SideBar = ({ pageWrapId, outerContainerId }) => {
 };
 
 export default SideBar;
+
